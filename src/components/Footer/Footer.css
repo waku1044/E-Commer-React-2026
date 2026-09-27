@@ -1,0 +1,67 @@
+.main-footer{
+    margin: 2rem;
+}
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fuerza 3 columnas exactas */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid #af0404;
+    padding-bottom: 30px;
+}
+ul {
+    list-style: none; 
+    
+}
+ul li{
+    margin-bottom: 1rem;    
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Fuerza 3 tarjetas alineadas */
+    gap: 20px;
+    max-width: 900px; /* Ajusta el ancho para que queden estéticas */
+    margin: 0 auto;
+}
+
+.team-card {
+    width: auto; /* Permite que la tarjeta se adapte a su columna */
+}
+.newsletter-form{
+    margin: 2rem 0;
+}
+.footer-bottom{
+    margin: 3rem 0;
+}
+.terminos {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea título y lista perfectamente a la izquierda */
+    text-align: left; /* 'solid' es obligatorio para que el borde sea visible */
+}
+
+/* Adaptabilidad automática para Celulares (Pantallas menores a 768px) */
+@media (max-width: 768px) {
+    .footer-top {
+        grid-template-columns: 1fr; /* Cambia a 1 sola columna */
+        gap: 20px;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr; /* Cambia a 1 sola tarjeta por fila */
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .footer-column {
+        padding: 0;
+        text-align: center; /* Opcional: centra el texto en celular para mejor estética */
+    }
+
+    .newsletter-form {
+        max-width: 300px;
+        margin: 10px auto 0 auto; /* Centra el formulario de newsletter en el móvil */
+    }
+}
