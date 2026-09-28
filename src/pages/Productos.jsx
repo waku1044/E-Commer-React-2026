@@ -1,10 +1,10 @@
-import Card from '../components/Card/Card';
+import Item from '../components/Card/Item.jsx';
 import {useState, useEffect } from 'react';
 
 
 const Productos = ()=>{
 
-  const [productos, setProductos] = useState([])
+  const [productos, setProductos] = useState([]);
 
 
   useEffect(() => {
@@ -18,7 +18,7 @@ const Productos = ()=>{
 
         <main className="productos-container"> {/* Usamos <main> por semántica */}
           {productos.map(producto => (
-            <Card 
+            <Item 
             key={producto.id} 
             producto={producto} 
             />

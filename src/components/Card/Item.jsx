@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import './Card.css';
+import {useState} from 'react';
+import './Item.css';
 
-const Card = ({ producto }) => {
-  // Estado para controlar si la descripción está expandida o colapsada
+const Item = ({ producto }) => {
+ 
   const [expandido, setExpandido] = useState(false);
 
-  // Mensaje de carga en español si el producto no está listo
   if (!producto) {
     return <div className="product-card">Cargando producto...</div>;
   }
 
-  // Configuración del límite de texto (100 caracteres)
+  
   const limiteCaracteres = 100;
   const descripcionOriginal = producto?.description || '';
   const esLargo = descripcionOriginal.length > limiteCaracteres;
 
-  // Recorta el texto si es largo y no está expandido
+  
   const descripcionAMostrar = expandido 
     ? descripcionOriginal 
     : (esLargo ? `${descripcionOriginal.substring(0, limiteCaracteres)}...` : descripcionOriginal);
@@ -29,7 +28,6 @@ const Card = ({ producto }) => {
       <section className="product-info">
         <h2 className="product-title">{producto?.title}</h2>
         
-        {/* Evento de clic para expandir o contraer */}
         <p 
           className={`product-description ${esLargo ? 'interactivo' : ''}`} 
           onClick={() => esLargo && setExpandido(!expandido)}
@@ -50,4 +48,4 @@ const Card = ({ producto }) => {
   );
 };
 
-export default Card;
+export default Item;

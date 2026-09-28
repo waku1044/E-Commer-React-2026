@@ -1,17 +1,21 @@
 import './Layout.css';
-import Nav from './components/Nav/Nav';
-import Footer from './components/Footer/Footer';
-import Productos from '../../pages/Productos'
+import { Outlet } from 'react-router-dom';
+import Nav from '../Nav/Nav.jsx';
+import Footer from '../Footer/Footer.jsx';
 
-const LayOut = ()=>{
-    <div className="app-container"> {/* Contenedor principal */}
+
+const Layout = ()=>{
+    return (
+
+    <div className="app-container"> 
         <Nav />
-        <Productos />
-
-
+        <main>
+            <Outlet />
+        </main>
         <Footer />
     
   </div>
+    )
 };
 
-export default LayOut;
+export default Layout;

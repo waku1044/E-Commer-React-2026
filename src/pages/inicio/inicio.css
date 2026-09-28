@@ -1,0 +1,239 @@
+
+.inicio-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-section {
+  
+  background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                    url('https://plus.unsplash.com/premium_photo-1677995700941-100976883af7?q=80&w=1223&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content {
+  max-width: 800px;
+  animation: fadeIn 1s ease-in-out; 
+}
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #47f8416e;
+  margin-bottom: 20px;
+  letter-spacing: -1px;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  color: #f1f2f6;
+  margin-bottom: 35px;
+  line-height: 1.6;
+}
+
+
+.btn-hero {
+  display: inline-block;
+  background-color: #00d3d373; 
+  color: #fff;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 50px; /* Bordes totalmente redondeados */
+  box-shadow: 0 4px 15px rgba(0, 210, 211, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-hero:hover {
+  background-color: #1dd1a196; /* Cambia a verde al pasar el mouse */
+  transform: translateY(-3px); /* Se eleva un poquito */
+  box-shadow: 0 6px 20px rgba(29, 209, 161, 0.6);
+}
+
+
+.about-section {
+  max-width: 900px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: 2.2rem;
+  color: #465d8e;
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+
+.about-section h2::after {
+  content: '';
+  display: block;
+  width: 15rem;
+  height: 4px;
+  background-color: #00d2d3;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+}
+
+.about-section p {
+  font-size: 1.15rem;
+  color: #57606f;
+  line-height: 1.8;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🎡 ESTILOS DE LA FRANJA DE MARCAS */
+.marcas-slider {
+  width: 100%;
+  background-color: rgba(195, 28, 64, 0.651); /* Franja semitransparente blanca */
+  backdrop-filter: blur(5px); /* Efecto esmerilado moderno */
+  padding: 20px 0;
+  overflow: hidden; /* Oculta los logos que se salen de la pantalla */
+  position: relative;
+  margin-top: auto; /* Se pega al fondo del Hero */
+}
+
+/* El contenedor largo que se moverá */
+.marcas-track {
+  display: flex;
+  width: calc(250px * 16); /* Ancho estimado: tamaño de cada item por total de items (8 originales + 8 duplicados) */
+  animation: scrollInfinito 25s linear infinite;
+}
+
+/* Cada marca individual */
+.marca-item {
+  width: 250px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.85); /* Texto blanco elegante */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@keyframes scrollInfinito {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Se desplaza exactamente la mitad del contenedor (el equivalente al grupo original) */
+    transform: translateX(calc(-250px * 8)); 
+  }
+}
+
+/* Pausar el movimiento cuando el usuario pasa el mouse por encima (Opcional pero genial) */
+.marcas-slider:hover .marcas-track {
+  animation-play-state: paused;
+}
+
+/* Contenedor exterior (Fondo y centrado) */
+.banner-bienvenida {
+    margin-top: 2rem;
+  background-color: #71798060; /* Gris claro muy limpio */
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenedor interior (Tarjeta de texto) */
+.banner-bienvenida-card {
+  background-color: #e1dcdca3; /* Fondo blanco */
+  max-width: 750px; /* Ancho máximo para una lectura cómoda */
+  width: 100%;
+  padding: 40px;
+  border-radius: 12px; /* Esquinas ligeramente redondeadas */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); /* Sombra muy suave y moderna */
+  text-align: center; /* Centra el texto */
+  border-top: 4px solid #00d2d3; /* Detalle de color aqua arriba */
+}
+
+/* Estilo del título h4 */
+.banner-bienvenida-card h4 {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.8rem;
+  color: #2f3542; /* Gris oscuro para mejor contraste */
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+/* Estilo del párrafo p */
+.banner-bienvenida-card p {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 1.1rem;
+  color: #2b2b2d; /* Gris intermedio para que sea agradable de leer */
+  line-height: 1.6; /* Espaciado entre líneas */
+  margin: 0;
+}
+
+/* Responsive para celulares */
+@media (max-width: 480px) {
+  .banner-bienvenida {
+    padding: 40px 15px;
+  }
+  
+  .banner-bienvenida-card {
+    padding: 25px 20px;
+  }
+  
+  .banner-bienvenida-card h4 {
+    font-size: 1.4rem;
+  }
+  
+  .banner-bienvenida-card p {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* 📱 ADAPTACIÓN PARA CELULARES (Responsive) */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60vh;
+  }
+  
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .btn-hero {
+    padding: 12px 28px;
+    font-size: 1rem;
+  }
+  
+  .about-section h2 {
+    font-size: 1.8rem;
+  }
+}
